@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import './App.scss'
 import Input from "./components/input";
 import Results from "./components/results";
+import locale from "./assets/images/icon-location.svg";
 function App() {
   const[request, setRequest] = useState();
   const[data, setData] = useState();
@@ -10,12 +11,16 @@ function App() {
     const url = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_jqaYdqwnn0MF47i9rI2OAxiNztSNF&ipAddress=${request}`);
     let response = await url.json();
     setData(await response);
+    document.querySelector("form input").value="";
   }
+
   useEffect(()=>{
     if(data){
       console.log(data);
     }
   },[data])
+
+
   return (
     <>
       <header>
@@ -28,7 +33,9 @@ function App() {
         <Results info="time zone" result={data?.location?.timezone}/>
         <Results info="isp" result={data?.isp}/>
         </article>
-      <div id="map"></div>
+        <main id="map">
+          <img src={locale}/>
+        </main>
     </>
   )
 }

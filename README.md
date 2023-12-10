@@ -1,10 +1,9 @@
-preciso adicionar o mapa dinamicamente com alguma biblioteca que forneça o mapa
+# ip tracker
 
-https://leafletjs.com/reference.html
+## layout
+- with *react* this project is inside an *#root* div, this root have an *header* an *article* and an *main* with #map id
+- header houses an **Input** component with an input an button, this input is for ip and the button start a search for provided ip. article have 4 **Results** components to show the data received from fetching data. the **#map** shows an map image and a locale image to illustrate the ip's locale
 
-
-preciso tambem fazer com que eu possa buscar os resultados, informando tambem um dominio ao inves apenas do ip
-
-
-preciso tambm criar o layout mobile
-provavelmente ajustando #rot para 100vw e diminuindo article com os resultados
+### code operation 
+- the button start a function *trackId()* to fetch data with provided ip by *input*
+-
